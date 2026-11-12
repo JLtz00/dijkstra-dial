@@ -1,7 +1,26 @@
 # Dijkstra (pesos enteros 1..100)
 
     gcc -O2 -march=native -o dijkstra dijkstra.c
-    ./dijkstra entrada.txt        # o:  ./dijkstra < entrada.txt
+    ./dijkstra entrada.txt              # Dial (por defecto)
+    ./dijkstra - < entrada.txt          # lee de stdin
+    ./dijkstra entrada.txt heap         # elegir otra cola de prioridad
+
+Colas disponibles (el 2do argumento), implementadas en `queues.h`:
+
+| | |
+|---|---|
+| `dial`    | 101 cubetas circulares + mascara de bits para saltar las vacias (por defecto) |
+| `barrido` | las mismas cubetas, pero buscando la siguiente recorriendolas una por una |
+| `heap`    | heap binario, clave `(dist<<20)|nodo` en un uint64 |
+| `heap4`   | heap 4-ario (mas plano, menos fallos de cache) |
+
+Las cuatro dan el mismo resultado (`test.sh` lo verifica); lo que cambia es el tiempo.
+Para medirlas de forma seria usa `./bench.sh`, que parsea una vez y cronometra
+solo el algoritmo. Para una comparacion rapida sobre tu propia entrada:
+
+    for q in dial barrido heap heap4; do
+        printf "%-8s " $q; /usr/bin/time -f "%e s" ./dijkstra entrada.txt $q
+    done
 
 Entrada: `V E` / `s t` / V lineas de etiquetas / E lineas `u v w`.
 Salida: la distancia, o `No hay camino` (macro `NO_PATH` en `dijkstra.c`).

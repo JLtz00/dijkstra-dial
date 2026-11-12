@@ -18,7 +18,16 @@ chk 8               t/basico.txt
 chk "No hay camino" t/sincamino.txt
 chk 0               t/mismo.txt
 chk 100             t/unaarista.txt
-echo 0 | ./dijkstra < t/basico.txt >/dev/null && echo "ok  stdin"
+echo 0 | ./dijkstra - < t/basico.txt >/dev/null && echo "ok  stdin"
+
+# las cuatro colas deben dar lo mismo
+for q in dial barrido heap heap4; do
+  got=$(./dijkstra t/basico.txt $q)
+  [ "$got" = "8" ] || { echo "FALLO cola $q: obtenido '$got'"; exit 1; }
+done
+echo "ok  dial / barrido / heap / heap4 coinciden"
+./dijkstra t/basico.txt lista 2>/dev/null && { echo "FALLO: cola invalida no dio error"; exit 1; }
+echo "ok  cola invalida -> error"
 
 # aleatorios contra referencia
 python3 - <<'PY'
