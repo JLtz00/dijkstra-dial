@@ -1,0 +1,6 @@
+# binarios
+dijkstra
+bench
+*.o
+# grafos de prueba generados por gen.py (70 MB)
+t/
