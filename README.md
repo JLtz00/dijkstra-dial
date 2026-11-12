@@ -4,6 +4,15 @@
     ./dijkstra entrada.txt              # Dial (por defecto)
     ./dijkstra - < entrada.txt          # lee de stdin
     ./dijkstra entrada.txt heap         # elegir otra cola de prioridad
+    TIEMPO=1 ./dijkstra entrada.txt     # + desglose de tiempos en stderr
+
+`TIEMPO=1` imprime en **stderr** (stdout sigue siendo solo la distancia):
+
+    parseo 7.912 ms | dial 7.998 ms | total 15.910 ms
+
+Cuesta 3 llamadas a `clock_gettime` = 93 ns, o sea 0,0001 ms: ni se nota (medido
+alternando el binario con y sin cronometro: 0,849 s vs 0,853 s en 20 corridas).
+No incluye el arranque ni el cierre del proceso (~4 ms), asi que da menos que `time`.
 
 Colas disponibles (el 2do argumento), implementadas en `queues.h`:
 

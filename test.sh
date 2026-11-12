@@ -29,6 +29,12 @@ echo "ok  dial / barrido / heap / heap4 coinciden"
 ./dijkstra t/basico.txt lista 2>/dev/null && { echo "FALLO: cola invalida no dio error"; exit 1; }
 echo "ok  cola invalida -> error"
 
+# TIEMPO=1 no debe contaminar stdout
+out=$(TIEMPO=1 ./dijkstra t/basico.txt 2>/dev/null)
+err=$(TIEMPO=1 ./dijkstra t/basico.txt 2>&1 >/dev/null)
+[ "$out" = "8" ] && [ -n "$err" ] || { echo "FALLO TIEMPO=1: stdout='$out' stderr='$err'"; exit 1; }
+echo "ok  TIEMPO=1 -> stdout limpio, tiempos en stderr"
+
 # aleatorios contra referencia
 python3 - <<'PY'
 import random, subprocess, heapq
