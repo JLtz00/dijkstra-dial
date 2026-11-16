@@ -1,31 +1,31 @@
 grafo,V,E,variante,ms_min,ms_med,dist
-cadena-1M.txt,1000000,500000,parseo,7.259,7.975,-
-cadena-1M.txt,1000000,500000,Dial+mascara,7.972,7.990,25244658
-cadena-1M.txt,1000000,500000,Dial+barrido,28.663,28.885,25244658
-cadena-1M.txt,1000000,500000,Heap binario,2.679,2.702,25244658
-cadena-1M.txt,1000000,500000,Heap 4-ario,2.667,2.672,25244658
-malla-250k.txt,250000,499000,parseo,5.524,5.670,-
-malla-250k.txt,250000,499000,Dial+mascara,7.105,7.125,23662
-malla-250k.txt,250000,499000,Dial+barrido,7.227,7.262,23662
-malla-250k.txt,250000,499000,Heap binario,23.083,23.225,23662
-malla-250k.txt,250000,499000,Heap 4-ario,14.923,15.121,23662
-disperso-1M.txt,1000000,500000,parseo,9.688,9.875,-
+cadena-1M.txt,1000000,500000,parseo,14.509,17.537,-
+cadena-1M.txt,1000000,500000,Dial+mascara,14.493,15.126,25244658
+cadena-1M.txt,1000000,500000,Dial+barrido,50.781,51.129,25244658
+cadena-1M.txt,1000000,500000,Heap binario,4.784,5.041,25244658
+cadena-1M.txt,1000000,500000,Heap 4-ario,4.742,4.793,25244658
+malla-250k.txt,250000,499000,parseo,11.043,14.098,-
+malla-250k.txt,250000,499000,Dial+mascara,13.465,13.956,23662
+malla-250k.txt,250000,499000,Dial+barrido,13.044,13.439,23662
+malla-250k.txt,250000,499000,Heap binario,42.114,42.533,23662
+malla-250k.txt,250000,499000,Heap 4-ario,27.134,27.841,23662
+disperso-1M.txt,1000000,500000,parseo,18.291,19.169,-
 disperso-1M.txt,1000000,500000,Dial+mascara,0.000,0.000,sin camino
 disperso-1M.txt,1000000,500000,Dial+barrido,0.000,0.000,sin camino
 disperso-1M.txt,1000000,500000,Heap binario,0.000,0.000,sin camino
 disperso-1M.txt,1000000,500000,Heap 4-ario,0.000,0.000,sin camino
-denso-50k-E100k.txt,50000,100000,parseo,1.994,3.313,-
-denso-50k-E100k.txt,50000,100000,Dial+mascara,0.687,0.712,224
-denso-50k-E100k.txt,50000,100000,Dial+barrido,0.746,0.770,224
-denso-50k-E100k.txt,50000,100000,Heap binario,1.659,1.665,224
-denso-50k-E100k.txt,50000,100000,Heap 4-ario,1.160,1.198,224
-denso-50k-E300k.txt,50000,300000,parseo,4.444,4.691,-
-denso-50k-E300k.txt,50000,300000,Dial+mascara,4.846,4.927,120
-denso-50k-E300k.txt,50000,300000,Dial+barrido,4.959,5.261,120
-denso-50k-E300k.txt,50000,300000,Heap binario,9.108,9.161,120
-denso-50k-E300k.txt,50000,300000,Heap 4-ario,7.749,7.818,120
-denso-50k-E500k.txt,50000,500000,parseo,7.343,7.458,-
-denso-50k-E500k.txt,50000,500000,Dial+mascara,7.333,7.468,57
-denso-50k-E500k.txt,50000,500000,Dial+barrido,7.426,7.480,57
-denso-50k-E500k.txt,50000,500000,Heap binario,11.173,11.261,57
-denso-50k-E500k.txt,50000,500000,Heap 4-ario,9.993,10.101,57
+denso-50k-E100k.txt,50000,100000,parseo,3.879,4.266,-
+denso-50k-E100k.txt,50000,100000,Dial+mascara,1.260,1.390,224
+denso-50k-E100k.txt,50000,100000,Dial+barrido,1.419,1.480,224
+denso-50k-E100k.txt,50000,100000,Heap binario,2.976,3.076,224
+denso-50k-E100k.txt,50000,100000,Heap 4-ario,2.142,2.282,224
+denso-50k-E300k.txt,50000,300000,parseo,9.480,9.880,-
+denso-50k-E300k.txt,50000,300000,Dial+mascara,10.601,12.166,120
+denso-50k-E300k.txt,50000,300000,Dial+barrido,9.981,10.698,120
+denso-50k-E300k.txt,50000,300000,Heap binario,17.435,18.087,120
+denso-50k-E300k.txt,50000,300000,Heap 4-ario,15.140,15.262,120
+denso-50k-E500k.txt,50000,500000,parseo,13.419,13.691,-
+denso-50k-E500k.txt,50000,500000,Dial+mascara,14.062,14.692,57
+denso-50k-E500k.txt,50000,500000,Dial+barrido,14.170,15.023,57
+denso-50k-E500k.txt,50000,500000,Heap binario,21.175,21.617,57
+denso-50k-E500k.txt,50000,500000,Heap 4-ario,19.086,20.189,57

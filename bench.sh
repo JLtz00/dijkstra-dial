@@ -16,5 +16,5 @@ for f in t/cadena-1M.txt t/malla-250k.txt t/disperso-1M.txt \
 done
 
 python3 chart.py resultados.csv comparacion.html
-column -s, -t resultados.csv
+column -s, -t resultados.csv 2>/dev/null || cat resultados.csv   # column puede no existir
 echo "-> resultados.csv y comparacion.html (abrir en el navegador)"
