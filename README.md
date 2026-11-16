@@ -6,6 +6,8 @@
 fuentes con `%%writefile`, no clona nada): compila, corre el ejemplo del enunciado,
 pasa las pruebas, mide el caso de V=1.000.000 y compara las cuatro colas.
 Se puede abrir con el botón de arriba o importarlo en Colab con *Archivo → Subir notebook*.
+`dijkstra_colab.ipynb` es la versión mínima: el programa en un solo archivo, compilar,
+y probar con una entrada subida a mano. Nada más.
 
     gcc -O2 -march=native -o dijkstra dijkstra.c
     ./dijkstra entrada.txt              # Dial (por defecto)
