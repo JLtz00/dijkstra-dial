@@ -2,8 +2,10 @@
 
 [![Abrir en Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JLtz00/dijkstra-dial/blob/main/demo_colab.ipynb)
 
-`demo_colab.ipynb` es una demostración ejecutable: compila, corre el ejemplo del
-enunciado, pasa las pruebas, mide el caso de V=1.000.000 y compara las cuatro colas.
+`demo_colab.ipynb` es una demostración ejecutable y **autocontenida** (escribe los
+fuentes con `%%writefile`, no clona nada): compila, corre el ejemplo del enunciado,
+pasa las pruebas, mide el caso de V=1.000.000 y compara las cuatro colas.
+Se puede abrir con el botón de arriba o importarlo en Colab con *Archivo → Subir notebook*.
 
     gcc -O2 -march=native -o dijkstra dijkstra.c
     ./dijkstra entrada.txt              # Dial (por defecto)
