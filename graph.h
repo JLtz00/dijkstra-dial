@@ -125,8 +125,13 @@ static void gr_parse(const char *p, const char *end, struct Graph *g) {
     struct Arc *arc = g->arc;
     int na = 0;
     for (unsigned i = 0; i < E; i++) {
+        /* hay archivos que declaran mas aristas de las que traen: parar en el final */
+        while (p < end && (unsigned)(*p - '0') > 9u) p++;
+        if (p == end) { g->E = E = i; break; }
         unsigned u = rd(&p, end), v = rd(&p, end), w = rd(&p, end);
-        if (u < 1 || u > V || v < 1 || v > V || w < 1 || w > WMAX) die("arista fuera de rango");
+        /* w == 0 se acepta aunque el enunciado diga w >= 1: aparece en los datos reales
+           y Dial lo maneja bien (la cubeta destino es la actual, que se vuelve a leer) */
+        if (u < 1 || u > V || v < 1 || v > V || w > WMAX) die("arista fuera de rango");
         arc[na].tw = (int)((v << 7) | w); arc[na].nx = node[u].head; node[u].head = na++;
 #if UNDIRECTED
         arc[na].tw = (int)((u << 7) | w); arc[na].nx = node[v].head; node[v].head = na++;
