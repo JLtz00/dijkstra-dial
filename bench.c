@@ -1,5 +1,8 @@
 /* Mide parseo y cada cola de prioridad sobre el mismo grafo.
  * Uso: ./bench entrada.txt [repeticiones]   -> una linea CSV por variante */
+/* _GNU_SOURCE antes de cualquier header: habilita MAP_POPULATE, MADV_HUGEPAGE
+   y clock_gettime en glibc viejo (si no, falla al compilar en Colab) */
+#define _GNU_SOURCE
 #include <time.h>
 #include "queues.h"
 

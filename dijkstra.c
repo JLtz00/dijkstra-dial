@@ -3,6 +3,9 @@
  *      cola: dial (por defecto) | barrido | heap | heap4   -- ver queues.h
  *      TIEMPO=1 ./dijkstra ...  escribe el desglose de tiempos en stderr
  * Formato: "V E" / "s t" / V lineas de etiquetas / E lineas "u v w". */
+/* _GNU_SOURCE antes de cualquier header: habilita MAP_POPULATE, MADV_HUGEPAGE
+   y clock_gettime en glibc viejo (si no, falla al compilar en Colab) */
+#define _GNU_SOURCE
 #include <time.h>
 #include "queues.h"
 
